@@ -1,0 +1,77 @@
+** sch_path: /home/designer/shared/555.sch
+.subckt 555 VDD TRESHOLD DISCHARGE CONTROL VBIAS RESET OUTPUT TRIGGER VSS
+*.PININFO OUTPUT:O TRIGGER:I VSS:B RESET:I TRESHOLD:I DISCHARGE:O VBIAS:I CONTROL:I VDD:B
+x1 VDD TRESHOLD CONTROL net2 VBIAS VSS Opamp
+x2 VDD net1 net7 net6 net2 RESET VSS LatchJK
+x3 VDD net3 TRIGGER net1 VBIAS VSS Opamp
+MMN0 DISCHARGE net5 VSS VSS sg13_lv_nmos w=7.4u l=130.00n ng=1 m=1
+x4 VDD net4 net6 VSS inv
+x5 VDD OUTPUT net4 VSS inv
+x6 VDD net5 OUTPUT VSS inv
+RR1 VDD CONTROL 174.352941176471 $SUB=VSS $[rppd] w=0.5e-6 l=2e-6 b=0 m=1
+RR2 CONTROL net3 174.352941176471 $SUB=VSS $[rppd] w=0.5e-6 l=2e-6 b=0 m=1
+RR3 net3 VSS 174.352941176471 $SUB=VSS $[rppd] w=0.5e-6 l=2e-6 b=0 m=1
+.ends
+
+* expanding   symbol:  Opamp.sym # of pins=6
+** sym_path: /home/designer/shared/Opamp.sym
+** sch_path: /home/designer/shared/Opamp.sch
+.subckt Opamp VDD Vin Vref Vout Vbias VSS
+*.PININFO Vin:I VDD:B VSS:B Vref:I Vout:O Vbias:I
+MMP5 net4 net4 VDD VDD sg13_lv_pmos w=10u l=150.00n ng=1 m=1
+MMP6 net1 net4 VDD VDD sg13_lv_pmos w=10u l=150.00n ng=1 m=1
+MMN4 net3 net2 VSS VSS sg13_lv_nmos w=420.00n l=560.00n ng=1 m=1
+MMN5 net2 net2 VSS VSS sg13_lv_nmos w=420.00n l=560.00n ng=1 m=1
+MMN6 net4 Vbias VSS VSS sg13_lv_nmos w=500.00n l=150.00n ng=1 m=1
+MMP7 net2 Vref net1 VDD sg13_lv_pmos w=10u l=300.00n ng=1 m=1
+MMP8 net3 Vin net1 VDD sg13_lv_pmos w=10u l=300.00n ng=1 m=1
+MMN7 Vout net3 VSS VSS sg13_lv_nmos w=420.00n l=560.00n ng=1 m=1
+MMP9 Vout net4 VDD VDD sg13_lv_pmos w=5u l=150.00n ng=1 m=1
+.ends
+
+
+* expanding   symbol:  LatchJK.sym # of pins=7
+** sym_path: /home/designer/shared/LatchJK.sym
+** sch_path: /home/designer/shared/LatchJK.sch
+.subckt LatchJK VDD S Qn Q R Rn VSS
+*.PININFO Qn:O Rn:I VDD:B VSS:B R:I S:I Q:O
+x2 VDD Q S Qn VSS NOR
+x21 VDD net2 Qn Q VSS NOR
+x22 VDD net1 Rn net2 VSS NAND
+x25 VDD net1 R VSS inv
+.ends
+
+
+* expanding   symbol:  inv.sym # of pins=4
+** sym_path: /home/designer/shared/inv.sym
+** sch_path: /home/designer/shared/inv.sch
+.subckt inv VDD Y A VSS
+*.PININFO Y:O A:I VDD:B VSS:B
+MMN0 Y A VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MMP0 Y A VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+.ends
+
+
+* expanding   symbol:  NOR.sym # of pins=5
+** sym_path: /home/designer/shared/NOR.sym
+** sch_path: /home/designer/shared/NOR.sch
+.subckt NOR VDD B A Y VSS
+*.PININFO Y:O A:I VDD:B VSS:B B:I
+MMN0 Y A VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MMP0 net1 B VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MMP1 Y A net1 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MMN1 Y B VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+.ends
+
+
+* expanding   symbol:  NAND.sym # of pins=5
+** sym_path: /home/designer/shared/NAND.sym
+** sch_path: /home/designer/shared/NAND.sch
+.subckt NAND VDD B A Y VSS
+*.PININFO Y:O A:I VDD:B VSS:B B:I
+MMN0 Y A net1 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MMP0 Y A VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MMP1 Y B VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MMN1 net1 B VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+.ends
+

@@ -1,0 +1,169 @@
+** sch_path: /home/designer/shared/PWMADCSYM.sch
+.subckt PWMADCSYM PWM VSS VDD VIN VBIAS CLK
+*.PININFO PWM:O VSS:B VDD:B VIN:I VBIAS:I CLK:I
+x1 VDD VBIAS VIN VSS net1 net2 net3 flashadcSym
+x2 VDD net5 net4 net6 CLK VSS cont3
+x3 net6 PWM net3 net5 net2 net4 net1 VDD VSS 3bitcomparator
+.ends
+
+* expanding   symbol:  flashadcSym.sym # of pins=7
+** sym_path: /home/designer/shared/flashadcSym.sym
+** sch_path: /home/designer/shared/flashadcSym.sch
+.subckt flashadcSym VDD vbias vin GND A B C
+*.PININFO VDD:B GND:B vbias:I vin:I B:O A:O C:O
+x9 VDD vin ref1 D1 vbias GND Opamp
+x10 VDD vin ref2 D2 vbias GND Opamp
+x11 VDD vin ref3 D3 vbias GND Opamp
+x12 VDD vin ref4 D4 vbias GND Opamp
+x13 VDD vin ref5 D5 vbias GND Opamp
+x14 VDD vin ref6 D6 vbias GND Opamp
+x15 VDD vin ref7 D7 vbias GND Opamp
+x4 VDD net2 D4 GND inv
+x16 VDD net2 D2 net3 GND NAND
+x1 VDD net4 net3 B GND NAND
+x3 VDD net4 D6 GND inv
+x6 VDD net5 D2 GND inv
+x17 VDD net7 D7 GND inv
+x18 VDD net8 D4 GND inv
+x20 VDD net9 D6 GND inv
+x7 VDD net5 D1 net6 GND NAND
+x19 VDD net9 D5 net10 GND NAND
+x21 VDD net8 D3 net11 GND NAND
+x8 VDD net7 net6 C2 GND NAND
+x22 VDD net10 net11 C1 GND NAND
+x23 VDD net12 C2 GND inv
+x24 VDD net13 C1 GND inv
+x25 VDD net13 net12 A GND NAND
+x2 VDD net14 D4 GND inv
+x5 VDD C net14 GND inv
+RR1 ref1 GND 113.176470588235 $SUB=GND $[rppd] w=0.5e-6 l=4e-6 b=0 m=1
+RR8 ref2 ref1 174.352941176471 $SUB=GND $[rppd] w=0.5e-6 l=2e-6 b=0 m=1
+RR7 ref3 ref2 174.352941176471 $SUB=GND $[rppd] w=0.5e-6 l=2e-6 b=0 m=1
+RR6 ref4 ref3 174.352941176471 $SUB=GND $[rppd] w=0.5e-6 l=2e-6 b=0 m=1
+RR5 ref5 ref4 174.352941176471 $SUB=GND $[rppd] w=0.5e-6 l=2e-6 b=0 m=1
+RR4 ref6 ref5 174.352941176471 $SUB=GND $[rppd] w=0.5e-6 l=2e-6 b=0 m=1
+RR3 ref7 ref6 174.352941176471 $SUB=GND $[rppd] w=0.5e-6 l=2e-6 b=0 m=1
+RR2 VDD net1 174.352941176471 $SUB=GND $[rppd] w=0.5e-6 l=2e-6 b=0 m=1
+RR9 net1 ref7 174.352941176471 $SUB=GND $[rppd] w=0.5e-6 l=2e-6 b=0 m=1
+.ends
+
+
+* expanding   symbol:  cont3.sym # of pins=6
+** sym_path: /home/designer/shared/cont3.sym
+** sch_path: /home/designer/shared/cont3.sch
+.subckt cont3 VDD B A C CLK VSS
+*.PININFO B:O CLK:B VDD:B VSS:B C:O A:O
+x1 CLK net1 VDD A net1 VSS flipflopn
+x2 A net2 VDD B net2 VSS flipflopn
+x3 B net3 VDD C net3 VSS flipflopn
+.ends
+
+
+* expanding   symbol:  3bitcomparator.sym # of pins=9
+** sym_path: /home/designer/shared/3bitcomparator.sym
+** sch_path: /home/designer/shared/3bitcomparator.sch
+.subckt 3bitcomparator B2 PWM A2 B1 A1 B0 A0 VDD VSS
+*.PININFO VDD:B VSS:B A2:I B2:I A1:I B1:I A0:I B0:I PWM:O
+x28 VDD net1 B2 net6 VSS NAND
+x29 VDD net1 A2 VSS inv
+x3 VDD net2 B1 net3 VSS NAND
+x6 VDD net2 A1 VSS inv
+x9 VDD net10 net11 net4 VSS NAND
+x11 VDD net11 net3 VSS inv
+x12 VDD B2 A2 net5 VSS NAND
+x4 VDD net5 A2 net7 VSS NAND
+x5 VDD net5 B2 net8 VSS NAND
+x15 VDD net8 net7 net9 VSS NAND
+x21 VDD net10 net9 VSS inv
+x2 VDD net12 B0 net13 VSS NAND
+x7 VDD net12 A0 VSS inv
+x8 VDD net18 net19 net20 VSS NAND
+x10 VDD net19 net13 VSS inv
+x13 VDD B1 A1 net14 VSS NAND
+x14 VDD net14 A1 net15 VSS NAND
+x16 VDD net14 B1 net16 VSS NAND
+x17 VDD net16 net15 net17 VSS NAND
+x18 VDD net18 net17 VSS inv
+x19 VDD net6 net4 net22 PWM VSS AND3
+x22 VDD net21 net20 VSS inv
+x23 VDD net21 net10 net22 VSS NAND
+.ends
+
+
+* expanding   symbol:  Opamp.sym # of pins=6
+** sym_path: /home/designer/shared/Opamp.sym
+** sch_path: /home/designer/shared/Opamp.sch
+.subckt Opamp VDD Vin Vref Vout Vbias VSS
+*.PININFO Vin:I VDD:B VSS:B Vref:I Vout:O Vbias:I
+MMP5 net4 net4 VDD VDD sg13_lv_pmos w=10u l=150.00n ng=1 m=1
+MMP6 net1 net4 VDD VDD sg13_lv_pmos w=10u l=150.00n ng=1 m=1
+MMN4 net3 net2 VSS VSS sg13_lv_nmos w=420.00n l=560.00n ng=1 m=1
+MMN5 net2 net2 VSS VSS sg13_lv_nmos w=420.00n l=560.00n ng=1 m=1
+MMN6 net4 Vbias VSS VSS sg13_lv_nmos w=500.00n l=150.00n ng=1 m=1
+MMP7 net2 Vref net1 VDD sg13_lv_pmos w=10u l=300.00n ng=1 m=1
+MMP8 net3 Vin net1 VDD sg13_lv_pmos w=10u l=300.00n ng=1 m=1
+MMN7 Vout net3 VSS VSS sg13_lv_nmos w=420.00n l=560.00n ng=1 m=1
+MMP9 Vout net4 VDD VDD sg13_lv_pmos w=5u l=150.00n ng=1 m=1
+.ends
+
+
+* expanding   symbol:  inv.sym # of pins=4
+** sym_path: /home/designer/shared/inv.sym
+** sch_path: /home/designer/shared/inv.sch
+.subckt inv VDD Y A VSS
+*.PININFO Y:O A:I VDD:B VSS:B
+MMN0 Y A VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MMP0 Y A VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+.ends
+
+
+* expanding   symbol:  NAND.sym # of pins=5
+** sym_path: /home/designer/shared/NAND.sym
+** sch_path: /home/designer/shared/NAND.sch
+.subckt NAND VDD B A Y VSS
+*.PININFO Y:O A:I VDD:B VSS:B B:I
+MMN0 Y A net1 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MMP0 Y A VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MMP1 Y B VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MMN1 net1 B VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+.ends
+
+
+* expanding   symbol:  flipflopn.sym # of pins=6
+** sym_path: /home/designer/shared/flipflopn.sym
+** sch_path: /home/designer/shared/flipflopn.sch
+.subckt flipflopn CLK Q_n VDD Q D VSS
+*.PININFO D:I Q:O CLK:B VDD:B VSS:B Q_n:O
+MMN0 net1 net7 net2 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MMP0 net1 CLK net2 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MMN1 net2 CLK net3 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MMP1 net2 net7 net3 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+x2 VDD net1 D VSS inv
+x3 VDD net4 net2 VSS inv
+x4 VDD net3 net4 VSS inv
+MMN2 net4 CLK net5 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MMP2 net4 net7 net5 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MMN3 net5 net7 net6 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MMP3 net5 CLK net6 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+x5 VDD Q_n net5 VSS inv
+x6 VDD net6 Q_n VSS inv
+x8 VDD Q Q_n VSS inv
+x9 VDD net7 CLK VSS inv
+.ends
+
+
+* expanding   symbol:  AND3.sym # of pins=6
+** sym_path: /home/designer/shared/AND3.sym
+** sch_path: /home/designer/shared/AND3.sch
+.subckt AND3 VDD A B C Y VSS
+*.PININFO A:I VDD:B VSS:B B:I C:I Y:O
+MMN0 net1 B net2 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MMP0 net3 A VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MMN1 net3 A net1 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MMN2 net2 C VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MMP1 net3 B VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MMP2 net3 C VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MMN3 Y net3 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MMP3 Y net3 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+.ends
+
