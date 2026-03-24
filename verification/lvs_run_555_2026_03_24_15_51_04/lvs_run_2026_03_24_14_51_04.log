@@ -1,0 +1,16 @@
+24-Mar-2026 15:51:04 | INFO    | Your Klayout version is: KLayout 0.30.5
+24-Mar-2026 15:51:04 | INFO    | Running SG13G2 LVS checks on design /home/designer/shared/Layouts/555Layout.gds on cell 555
+24-Mar-2026 15:51:07 | INFO    | ==============================================================================
+24-Mar-2026 15:51:07 | INFO    | Important Summary
+24-Mar-2026 15:51:07 | INFO    | +------------------+---------------------------------------------------------------+
+24-Mar-2026 15:51:07 | INFO    | | Status           | PASS                                                          |
+24-Mar-2026 15:51:07 | INFO    | | Mode             | COMPARE                                                       |
+24-Mar-2026 15:51:07 | INFO    | | Outcome          | Comparison mode: PASS (netlists match).                       |
+24-Mar-2026 15:51:07 | INFO    | | Layout           | 555Layout.gds                                                 |
+24-Mar-2026 15:51:07 | INFO    | | Top Cell         | 555                                                           |
+24-Mar-2026 15:51:07 | INFO    | | Results Dir      | /home/designer/shared/Layouts/lvs_run_555_2026_03_24_15_51_04 |
+24-Mar-2026 15:51:07 | INFO    | | Warnings         | 0                                                             |
+24-Mar-2026 15:51:07 | INFO    | | Errors           | 0                                                             |
+24-Mar-2026 15:51:07 | INFO    | | Run Time (s)     | 3.243                                                         |
+24-Mar-2026 15:51:07 | INFO    | +------------------+---------------------------------------------------------------+
+24-Mar-2026 15:51:07 | INFO    | ==============================================================================

@@ -1,0 +1,85 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 24/03/2026 15:51
+
+.SUBCKT 555
+M$1 \$5 \$5 \$7 \$7 sg13_lv_nmos L=0.56u W=0.42u AS=0.1428p AD=0.1428p PS=1.52u
++ PD=1.52u rfmode=0
+M$2 \$7 \$5 \$10 \$7 sg13_lv_nmos L=0.56u W=0.42u AS=0.1428p AD=0.1428p
++ PS=1.52u PD=1.52u rfmode=0
+M$3 \$7 \$11 \$15 \$7 sg13_lv_nmos L=0.15u W=0.5u AS=0.17p AD=0.17p PS=1.68u
++ PD=1.68u rfmode=0
+M$4 \$7 \$10 \$23 \$7 sg13_lv_nmos L=0.56u W=0.42u AS=0.1428p AD=0.1428p
++ PS=1.52u PD=1.52u rfmode=0
+M$5 \$48 \$48 \$7 \$7 sg13_lv_nmos L=0.56u W=0.42u AS=0.1428p AD=0.1428p
++ PS=1.52u PD=1.52u rfmode=0
+M$6 \$7 \$34 \$12 \$7 sg13_lv_nmos L=0.13u W=7.4u AS=2.516p AD=2.516p PS=15.48u
++ PD=15.48u rfmode=0
+M$7 \$7 \$75 \$28 \$7 sg13_lv_nmos L=0.13u W=0.74u AS=0.2516p AD=0.2516p
++ PS=2.16u PD=2.16u rfmode=0
+M$8 \$7 \$28 \$29 \$7 sg13_lv_nmos L=0.13u W=0.74u AS=0.2516p AD=0.1406p
++ PS=2.16u PD=1.12u rfmode=0
+M$9 \$29 \$36 \$30 \$7 sg13_lv_nmos L=0.13u W=0.74u AS=0.1406p AD=0.2516p
++ PS=1.12u PD=2.16u rfmode=0
+M$10 \$7 \$30 \$31 \$7 sg13_lv_nmos L=0.13u W=0.74u AS=0.2516p AD=0.1406p
++ PS=2.16u PD=1.12u rfmode=0
+M$11 \$31 \$49 \$7 \$7 sg13_lv_nmos L=0.13u W=0.74u AS=0.1406p AD=0.2516p
++ PS=1.12u PD=2.16u rfmode=0
+M$12 \$7 \$31 \$49 \$7 sg13_lv_nmos L=0.13u W=0.74u AS=0.2516p AD=0.1406p
++ PS=2.16u PD=1.12u rfmode=0
+M$13 \$49 \$23 \$7 \$7 sg13_lv_nmos L=0.13u W=0.74u AS=0.1406p AD=0.2516p
++ PS=1.12u PD=2.16u rfmode=0
+M$14 \$7 \$31 \$32 \$7 sg13_lv_nmos L=0.13u W=0.74u AS=0.2516p AD=0.2516p
++ PS=2.16u PD=2.16u rfmode=0
+M$15 \$7 \$32 \$33 \$7 sg13_lv_nmos L=0.13u W=0.74u AS=0.2516p AD=0.2516p
++ PS=2.16u PD=2.16u rfmode=0
+M$16 \$7 \$33 \$34 \$7 sg13_lv_nmos L=0.13u W=0.74u AS=0.2516p AD=0.2516p
++ PS=2.16u PD=2.16u rfmode=0
+M$17 \$7 \$48 \$65 \$7 sg13_lv_nmos L=0.56u W=0.42u AS=0.1428p AD=0.1428p
++ PS=1.52u PD=1.52u rfmode=0
+M$18 \$7 \$11 \$68 \$7 sg13_lv_nmos L=0.15u W=0.5u AS=0.17p AD=0.17p PS=1.68u
++ PD=1.68u rfmode=0
+M$19 \$7 \$65 \$75 \$7 sg13_lv_nmos L=0.56u W=0.42u AS=0.1428p AD=0.1428p
++ PS=1.52u PD=1.52u rfmode=0
+M$20 \$3 \$4 \$5 \$16 sg13_lv_pmos L=0.3u W=10u AS=2.65p AD=2.65p PS=16.06u
++ PD=16.06u rfmode=0
+M$22 \$3 \$1 \$10 \$16 sg13_lv_pmos L=0.3u W=10u AS=2.65p AD=2.65p PS=16.06u
++ PD=16.06u rfmode=0
+M$24 \$16 \$15 \$15 \$16 sg13_lv_pmos L=0.15u W=10u AS=2.65p AD=2.65p PS=16.06u
++ PD=16.06u rfmode=0
+M$26 \$16 \$15 \$3 \$16 sg13_lv_pmos L=0.15u W=10u AS=2.65p AD=2.65p PS=16.06u
++ PD=16.06u rfmode=0
+M$28 \$16 \$15 \$23 \$16 sg13_lv_pmos L=0.15u W=5u AS=1.7p AD=1.7p PS=10.68u
++ PD=10.68u rfmode=0
+M$29 \$35 \$26 \$48 \$16 sg13_lv_pmos L=0.3u W=10u AS=2.65p AD=2.65p PS=16.06u
++ PD=16.06u rfmode=0
+M$31 \$35 \$64 \$65 \$16 sg13_lv_pmos L=0.3u W=10u AS=2.65p AD=2.65p PS=16.06u
++ PD=16.06u rfmode=0
+M$33 \$16 \$75 \$28 \$16 sg13_lv_pmos L=0.13u W=1.12u AS=0.3808p AD=0.3808p
++ PS=2.92u PD=2.92u rfmode=0
+M$34 \$16 \$28 \$30 \$16 sg13_lv_pmos L=0.13u W=1.12u AS=0.3808p AD=0.2128p
++ PS=2.92u PD=1.5u rfmode=0
+M$35 \$30 \$36 \$16 \$16 sg13_lv_pmos L=0.13u W=1.12u AS=0.2128p AD=0.3808p
++ PS=1.5u PD=2.92u rfmode=0
+M$36 \$16 \$30 \$51 \$16 sg13_lv_pmos L=0.13u W=1.12u AS=0.3808p AD=0.2128p
++ PS=2.92u PD=1.5u rfmode=0
+M$37 \$51 \$49 \$31 \$16 sg13_lv_pmos L=0.13u W=1.12u AS=0.2128p AD=0.3808p
++ PS=1.5u PD=2.92u rfmode=0
+M$38 \$16 \$31 \$52 \$16 sg13_lv_pmos L=0.13u W=1.12u AS=0.3808p AD=0.2128p
++ PS=2.92u PD=1.5u rfmode=0
+M$39 \$52 \$23 \$49 \$16 sg13_lv_pmos L=0.13u W=1.12u AS=0.2128p AD=0.3808p
++ PS=1.5u PD=2.92u rfmode=0
+M$40 \$16 \$31 \$32 \$16 sg13_lv_pmos L=0.13u W=1.12u AS=0.3808p AD=0.3808p
++ PS=2.92u PD=2.92u rfmode=0
+M$41 \$16 \$32 \$33 \$16 sg13_lv_pmos L=0.13u W=1.12u AS=0.3808p AD=0.3808p
++ PS=2.92u PD=2.92u rfmode=0
+M$42 \$16 \$33 \$34 \$16 sg13_lv_pmos L=0.13u W=1.12u AS=0.3808p AD=0.3808p
++ PS=2.92u PD=2.92u rfmode=0
+M$43 \$16 \$68 \$68 \$16 sg13_lv_pmos L=0.15u W=10u AS=2.65p AD=2.65p PS=16.06u
++ PD=16.06u rfmode=0
+M$45 \$16 \$68 \$35 \$16 sg13_lv_pmos L=0.15u W=10u AS=2.65p AD=2.65p PS=16.06u
++ PD=16.06u rfmode=0
+M$47 \$16 \$68 \$75 \$16 sg13_lv_pmos L=0.15u W=5u AS=1.7p AD=1.7p PS=10.68u
++ PD=10.68u rfmode=0
+R$48 \$7 \$1 \$7 rppd w=0.5u l=2u ps=0u b=0 m=1
+R$49 \$1 \$26 \$7 rppd w=0.5u l=2u ps=0u b=0 m=1
+R$50 \$26 \$16 \$7 rppd w=0.5u l=2u ps=0u b=0 m=1
+.ENDS 555
